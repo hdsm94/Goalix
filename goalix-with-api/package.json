@@ -1,0 +1,14 @@
+{
+  "name": "goalix-bot-api",
+  "version": "1.0.0",
+  "description": "Bot Discord Goalix connecté à API-Football",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1"
+  }
+}
