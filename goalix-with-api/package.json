@@ -1,7 +1,7 @@
 {
-  "name": "goalix-bot-api",
+  "name": "goalix-final",
   "version": "1.0.0",
-  "description": "Bot Discord Goalix connecté à API-Football",
+  "description": "Bot Discord Goalix - version complète",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
