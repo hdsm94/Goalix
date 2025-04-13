@@ -20,8 +20,11 @@ client.on('messageCreate', async message => {
     if (message.content === '!matchs') {
         try {
             const today = new Date().toISOString().split('T')[0];
-            const response = await axios.get('https://v3.football.api-sports.io/fixtures'), {
-                headers: { 'x-apisports-key': process.env.FOOTBALL_API_KEY },
+
+            const response = await axios.get('https://v3.football.api-sports.io/fixtures', {
+                headers: {
+                    'x-apisports-key': process.env.FOOTBALL_API_KEY
+                },
                 params: {
                     date: today,
                     timezone: 'Europe/Paris'
@@ -29,7 +32,7 @@ client.on('messageCreate', async message => {
             });
 
             const matchs = response.data.response;
-            if (!matchs.length) return message.channel.send('Aucun match trouvé pour aujourd'hui ⚽');
+            if (!matchs.length) return message.channel.send('Aucun match trouvé pour aujourd\'hui ⚽');
 
             let msg = '🗓️ **Matchs du jour** :\n';
             matchs.slice(0, 5).forEach(match => {
@@ -46,4 +49,5 @@ client.on('messageCreate', async message => {
         }
     }
 });
+
 client.login(process.env.DISCORD_TOKEN);
