@@ -20,7 +20,7 @@ client.on('messageCreate', async message => {
     if (message.content === '!matchs') {
         try {
             const today = new Date().toISOString().split('T')[0];
-            const response = await axios.get('https://v3.football.api-sports.io/fixtures', {
+            const response = await axios.get('https://v3.football.api-sports.io/fixtures'), {
                 headers: { 'x-apisports-key': process.env.FOOTBALL_API_KEY },
                 params: {
                     date: today,
